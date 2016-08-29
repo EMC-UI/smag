@@ -22,6 +22,7 @@
     "moment": "^2.11.2",
     "q": "1.4.1",
     "angular": "^1.5.2",
-    "jquery.scrollTo": "^2.1.2"
+    "jquery.scrollTo": "^2.1.2",
+    "angular-ui-layout": "^1.4.2"
   }
 }
