@@ -1,0 +1,25 @@
+{
+  "name": "smag",
+  "version": "1.0.0",
+  "description": "Sm@G it up!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.7.9",
+    "express": "^4.13.4",
+    "grunt-cli": "^1.2.0",
+    "grunt-sass": "^1.1.0",
+    "request-promise": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-express-server": "^0.5.2",
+    "moment": "^2.11.2"
+  }
+}
