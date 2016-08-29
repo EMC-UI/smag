@@ -1,0 +1,27 @@
+{
+  "name": "smag",
+  "description": "display selenium jobs",
+  "main": "server.js",
+  "authors": [
+    "Michael, Sarah, Avi, Greg"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "underscore": "^1.8.3",
+    "moment": "^2.11.2",
+    "q": "1.4.1",
+    "angular": "^1.5.2",
+    "jquery.scrollTo": "^2.1.2"
+  }
+}
