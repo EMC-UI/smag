@@ -1,47 +1,25 @@
 <!DOCTYPE html>
-<html ng-app="x">
+<html ng-app="app">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width">
 
-    <title>UI.Layout Issue</title>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <!-- Bower stuff -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 
-    <link rel="stylesheet" href="https://rawgithub.com/angular-ui/ui-layout/v1.0.5/ui-layout.css">
-    <link rel="stylesheet" href="style.css">
-    <!--<script src="bower_components/jquery/dist/jquery.min.js"></script>-->
-    <!--<script src="bower_components/angular/angular.min.js"></script>-->
-    <!--<script src="bower_components/underscore/underscore-min.js"></script>-->
-    <!--<script src="bower_components/moment/min/moment.min.js"></script>-->
-    <!--<script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>-->
-    <!--<script type="text/javascript" src="bower_components/raf/index.js"></script>-->
-    <!--<script type="text/javascript" src="bower_components/angular-ui-layout/ui-layout.js"></script>-->
-
+    <!-- Local stuff -->
+    <script src="js/app.js"></script>
 </head>
 
-<body>
-<div ui-layout  style="position:relative; height:500px">
-    <div ui-layout-container style="border-style: solid;"><h1>top</h1></div>
-
-    <div ui-layout-container>
-        <div ui-layout="{flow : 'column'}" >
-            <div ui-layout-container style="border-style: solid;" ><h1>left</h1></div>
-            <div ui-layout-container style="border-style: solid;"  ><h1>right</h1></div>
-        </div>
-    </div>
-
-    <div ui-layout-container style="border-style: solid;"><h1>bottom</h1></div>
-</div>
-
-<!-- Le javascript -->
-<script type="application/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-<script type="application/javascript" src="https://rawgithub.com/angular-ui/ui-layout/v1.0.5/ui-layout.min.js"></script>
-<script>
-    angular.module('x', ['ui.layout']);
-</script>
+<body ng-controller="controller">
+  SMAG!
 </body>
 
 </html>
