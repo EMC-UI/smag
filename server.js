@@ -1,7 +1,7 @@
 /**
  * Created by monzys on 8/29/2016.
  */
-#!/usr/bin/env node
+//#!/usr/bin/env node
 'use strict';
 
 var express = require('express');
