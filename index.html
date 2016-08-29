@@ -10,8 +10,20 @@
     <script src="bower_components/moment/min/moment.min.js"></script>
     <script src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-ui-layout/ui-layout.css"/>
+    <script type="text/javascript" src="bower_components/raf/index.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-layout/ui-layout.js"></script>
+
 </head>
 <body>
-SMAG!
+    <div ui-layout class="layout-mock">
+        <header class="north-back">TOP</header>
+        <ui-layout options="{ flow : 'column' }">
+            <sidebar class="east-back">EAST</sidebar>
+            <div class="center-back">SMAG!</div>
+            <sidebar class="west-back">WEST</sidebar>
+        </ui-layout>
+        <footer class="south-back">BOTTOM</footer>
+    </div>
 </body>
 </html>
