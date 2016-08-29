@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "angular-ui-layout": "^1.4.2",
     "bower": "^1.7.9",
     "express": "^4.13.4",
     "grunt-cli": "^1.2.0",
