@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
 
     <!-- Bower stuff -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
@@ -22,13 +24,11 @@
   <div class="flex-container">
       <div class="header">SMAG!</div>
       <div class="main" ng-controller="ProjectListCtrl">
-          <div class="main-nav">
-              <ul class="col-lg-4">
-                  <li ng-repeat="project in projects">
-                      <span ng-click="select(project)" class="btn-link">{{project.name}}</span>
-                  </li>
-              </ul>
-          </div>
+              <div class="main-nav">
+                  <span ng-repeat="project in projects">
+                      <button type="button" class="btn btn-primary" ng-click="select(project)" >{{project.name}}</button>
+                  </span>
+              </div>
           <div class="main-section">
               <div ng-show="selectedProject">
                   <iframe width="100%" height="400px" ng-src="{{detailFrameSrc}}"></iframe>
