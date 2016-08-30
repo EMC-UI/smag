@@ -7,7 +7,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var projects = require('./server/projects');
-var vcenters = require('./server/vcenters');
 
 
 module.exports = (function() {
@@ -40,18 +39,6 @@ module.exports = (function() {
                 });
               }
             });
-        });
-
-        app.get('/api/projects/:id', function (req, res) {
-            res.send(projects.get(req.params.id));
-        });
-
-        app.get('/api/vcenters', function (req, res) {
-            res.send(vcenters.getAll());
-        });
-
-        app.get('/api/vcenters/:id', function (req, res) {
-            res.send(vcenters.get(req.params.id));
         });
 
         app.listen(port, function () {
