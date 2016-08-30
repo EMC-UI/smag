@@ -25,8 +25,14 @@
       <div class="header">SMAG!</div>
       <div class="main" ng-controller="ProjectListCtrl">
               <div class="main-nav">
+
                   <span ng-repeat="project in projects">
-                      <button type="button" class="btn btn-primary" ng-click="select(project)" >{{project.name}}</button>
+                     <a href="#" class="list-group-item list-group-item-action" ng-class="{'active': project == selectedProject}">
+                      <h5 class="list-group-item-action" ng-click="select(project)"> {{project.name}} </h5>
+
+                      <p class="list-group-item-text"> {{project.description}} </p>
+                    </a>
+                  <!-- <button type="button" class="btn btn-primary" ng-click="select(project)" >{{project.name}}</button>-->
                   </span>
               </div>
           <div class="main-section">
