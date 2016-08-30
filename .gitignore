@@ -5,3 +5,4 @@ bower_components/
 css/
 sass/*.css
 sass/*.css.map
+server/projects.json
