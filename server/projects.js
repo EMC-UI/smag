@@ -1,23 +1,12 @@
 'use strict';
 
 var _ = require('underscore');
+var fs = require('fs');
 var SSH = require('simple-ssh');
 
-var projects = [
-  {
-      "id": 1,
-      "name": "McQueen",
-      "vm-name": "IAAS (71a5a82e-c2e9-4cdf-8daf-5ea40f8e3cd7)",
-      "vm-vcenter": "vcenter-dev2.devlsvl.com",
-      "vm-vcenter-user": "root",
-      "vm-vcenter-pass": ""
-  },
-  {
-      "id": 2,
-      "name": "MSM",
-      "hostId": 1
-  }
-];
+var projects = JSON.parse(fs.readFileSync('./server/projects.json', 'utf8'));
+console.log('projects:');
+console.log(projects);
 
 function getVmrcURL(project) {
 //            var sshExecCommand = function(project) {
