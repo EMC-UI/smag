@@ -3,10 +3,13 @@
         "id": 1,
         "name": "McQueen",
         "description": "vRealize Data Protection",
-        "vm-name": "Selenium VM",
-        "vm-vcenter": "vcenter.dev.com",
+        "vm-name": "IAAS (71a5a82e-c2e9-4cdf-8daf-5ea40f8e3cd7)",
+        "vm-vcenter": "10.7.102.20",
         "vm-vcenter-user": "",
-        "vm-vcenter-pass": ""
+        "vm-vcenter-pass": "",
+        "ssh-host": "10.7.102.59",
+        "ssh-user": "",
+        "ssh-pass": ""
     },
     {
         "id": 2,
