@@ -42,8 +42,9 @@
 
             $scope.cancel = function(project) {
                 //TODO:: Disconnect the project session
-                //Hide the frame
                 $scope.selectedProject = undefined;
+                //Hide the frame
+                $scope.detailFrameSrc = '';
             };
 //
 //            var sshExecCommand = function(project) {
