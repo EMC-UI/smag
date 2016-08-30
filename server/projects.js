@@ -11,19 +11,11 @@ console.log(projects);
 // @param project the project (form projects.json)
 // @param callback a function(url, err) to call when fetched
 function getVmrcURL(project, callback) {
-//            var sshExecCommand = function(project) {
-//                var ssh = new SSH({
-//                    host: 'localhost', //vma-avi.devlsvl.com
-//                    user: 'username', // vi-admin
-//                    pass: 'password' // ?Strong1?
-//                });
-//
-//                ssh.exec('echo $PATH', {
-//                    out: function(stdout) {
-//                        console.log(stdout);
-//                    }
-//                }).start();
-//            };
+  if (project['vm-fake-url']) {
+    //console.log('Calling callback with url');
+    callback(project['vm-fake-url'], undefined);
+    return;
+  }
   // ssh to the host listed in the project
   console.log('host: '+ project['ssh-host']);
   console.log('user: '+ project['ssh-user']);
