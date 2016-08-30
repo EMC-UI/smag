@@ -32,6 +32,7 @@ function getVmrcURL(project, callback) {
 function getAllProjects() {
   return _.sortBy(projects, function (c) {
     return c.name;
+      return c.description;
   });
 }
 
