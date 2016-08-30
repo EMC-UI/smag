@@ -11,11 +11,13 @@
   "license": "ISC",
   "dependencies": {
     "angular-ui-layout": "^1.4.2",
+    "body-parser": "^1.15.2",
     "bower": "^1.7.9",
     "express": "^4.13.4",
     "grunt-cli": "^1.2.0",
     "grunt-sass": "^1.1.0",
-    "request-promise": "^1.0.1"
+    "request-promise": "^1.0.1",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "grunt": "^0.4.5",

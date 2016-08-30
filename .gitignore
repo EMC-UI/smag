@@ -2,5 +2,6 @@
 node_modules
 bower_components/
 *.swp
-sass/**.map
-sass/**.css
+css/
+sass/*.css
+sass/*.css.map
