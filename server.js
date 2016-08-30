@@ -24,7 +24,22 @@ module.exports = (function() {
         });
 
         app.get('/api/projects/:id/vmrc', function (req, res) {
-            res.send(projects.getVmrc(req.params.id));
+            // call the method to gen the vmrc url
+            //console.log('calling genVmrc');
+            projects.genVmrc(req.params.id, function(url, err) {
+              // something happened getting the url
+              if (!url) {
+                //console.log('sending error: ' + err);
+                res.status(500).send(err);
+              }
+              // got it, so send it to the response
+              else {
+                //console.log('sending url: ' + url);
+                res.send({
+                  url: url
+                });
+              }
+            });
         });
 
         app.get('/api/projects/:id', function (req, res) {
