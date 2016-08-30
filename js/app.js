@@ -1,7 +1,6 @@
 (function (angular) {
     "use strict";
     var app = angular.module("app", []);
-//    var SSH = require('simple-ssh');
 
     app.controller('controller', ['$scope','$interval', function($scope, $interval) {
         console.log('Got here!: ' + $scope);
@@ -42,24 +41,10 @@
 
             $scope.cancel = function(project) {
                 //TODO:: Disconnect the project session
-                //Hide the frame
                 $scope.selectedProject = undefined;
+                //Hide the frame
+                $scope.detailFrameSrc = '';
             };
-//
-//            var sshExecCommand = function(project) {
-//                var ssh = new SSH({
-//                    host: 'localhost', //vma-avi.devlsvl.com
-//                    user: 'username', // vi-admin
-//                    pass: 'password' // ?Strong1?
-//                });
-//
-//                ssh.exec('echo $PATH', {
-//                    out: function(stdout) {
-//                        console.log(stdout);
-//                    }
-//                }).start();
-//            };
-
         }]);
 
 }(window.angular));
