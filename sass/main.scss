@@ -20,8 +20,11 @@ html, body {
 }
 
 .header {
-  background-color: red;
-  min-height: 30px;
+  color: white;
+  text-overline-color: black;
+  background-color: #4682b4;
+  font: 48px sans-serif;
+  min-height: 60px;
 }
 
 .main {
@@ -36,11 +39,13 @@ html, body {
 }
 
 .main-nav {
-  background-color: yellow;
+  color: white;
+  background-color: #b0c4ed;
   flex: 1 0px;
 }
 
 .main-section {
-  background-color: orange;
+  color: white;
+  background-color: #000000;
   flex: 10 0px;
 }
