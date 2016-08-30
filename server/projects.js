@@ -24,9 +24,67 @@ function getVmrcURL(project, callback) {
 //                    }
 //                }).start();
 //            };
+  // ssh to the host listed in the project
+  console.log('host: '+ project['ssh-host']);
+  console.log('user: '+ project['ssh-user']);
+  console.log('pass: '+ project['ssh-pass']);
+  var ssh = new SSH({
+    host: project['ssh-host'],
+    user: project['ssh-user'],
+    pass: project['ssh-pass']
+  });
+  var gotUrl = false;
+
+  var args = "'" + [
+      '--server',
+      project['vm-vcenter'],
+      '--username',
+      project['vm-vcenter-user'],
+      '--password',
+      project['vm-vcenter-pass'],
+      '--vm',
+      project['vm-name']
+  ].join("' '") + "'";
+
+  console.log('args=' + args);
+
+  // run the perl script on the vma host
+  ssh.exec('./generateHTML5VMConsole.pl ' + args, {
+    out: function(stdout) {
+      // we get all the output at once, so split on newline
+      stdout.split(/\r?\n/).forEach(function(line) {
+        console.log('sshout: ' + line);
+        // if we haven't gotten a url from stdout yet, and we get some
+        // stdout, send that to the callback
+        if (!gotUrl && (line = line.trim()).length > 0) {
+          gotUrl = true;
+          callback(line, undefined);
+          return false;
+        }
+        return true;
+      });
+    },
+    exit: function(code) {
+      // if the ssh exist w/o sending a url, send the callback an error
+      console.log('Exited with error code ' + code);
+      if (!gotUrl) {
+        callback(undefined, 'Exited with error code: ' + code);
+      }
+    },
+    err: function(line) {
+      console.log('ssherr: ' + line);
+    }
+  }).start({
+    success: function() {
+      console.log('Connected to ' + project['ssh-host']);
+    },
+    fail: function(err) {
+      console.log('Failed to connect to ' + project['ssh-host'] + ': ' + err);
+    }
+  });
 
   //console.log('Calling callback with url');
-  callback('http://www.emc.com', undefined);
+  //callback('http://www.emc.com', undefined);
 }
 
 function getAllProjects() {
