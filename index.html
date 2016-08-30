@@ -27,8 +27,8 @@
               <div class="main-nav">
 
                   <span ng-repeat="project in projects">
-                     <a href="#" class="list-group-item list-group-item-action" ng-class="{'active': project == selectedProject}">
-                      <h5 class="list-group-item-action" ng-click="select(project)"> {{project.name}} </h5>
+                     <a href="#" class="list-group-item list-group-item-action" ng-class="{'active': project == selectedProject}" ng-click="select(project)">
+                      <h5 class="list-group-item-action"> {{project.name}} </h5>
 
                       <p class="list-group-item-text"> {{project.description}} </p>
                     </a>
