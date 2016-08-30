@@ -26,10 +26,10 @@
       <!--<div class="header">SMAG!</div>-->
       <div class="main" ng-controller="ProjectListCtrl">
               <div class="main-nav">
-                  <h1>SMAG!</h1>
+                  <h2 style="text-align: center">EMC <br>Projects</h2>
                   <span ng-repeat="project in projects">
-                     <button type="button" class="btn btn-outline-primary list-group-item list-group-item-action" style="width: 100%" ng-class="{'active': project == selectedProject}" ng-click="select(project)">
-                      <h5 class="list-group-item-action"> {{project.name}} </h5>
+                     <button type="button" class="btn btn-outline-primary list-group-item list-group-item-action" style="width: 100%; box-shadow: 0px 5px 5px #888888" ng-class="{'active': project == selectedProject}" ng-click="select(project)">
+                      <h4 class="list-group-item-action"> {{project.name}} </h4>
 
                       <p class="list-group-item-text"> {{project.description}} </p>
                     </button>
@@ -37,7 +37,7 @@
                   </span>
                   <div ng-show="selectedProject">
                       <div class="col-lg-offset-1 col-lg-8">
-                          <button ng-click="cancel(selectedProject)" class="btn btn-warning">
+                          <button ng-click="cancel(selectedProject)" class="btn btn-warning" style="text-align: center">
                               Cancel
                           </button>
                       </div>
