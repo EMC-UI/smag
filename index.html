@@ -28,12 +28,12 @@
               <div class="main-nav">
                   <h1>SMAG!</h1>
                   <span ng-repeat="project in projects">
-                     <a href="#" class="list-group-item list-group-item-action" ng-class="{'active': project == selectedProject}" ng-click="select(project)">
+                     <button type="button" class="btn btn-outline-primary list-group-item list-group-item-action" style="width: 100%" ng-class="{'active': project == selectedProject}" ng-click="select(project)">
                       <h5 class="list-group-item-action"> {{project.name}} </h5>
 
                       <p class="list-group-item-text"> {{project.description}} </p>
-                    </a>
-                  <!-- <button type="button" class="btn btn-primary" ng-click="select(project)" >{{project.name}}</button>-->
+                    </button>
+                      </br>
                   </span>
                   <div ng-show="selectedProject">
                       <div class="col-lg-offset-1 col-lg-8">
