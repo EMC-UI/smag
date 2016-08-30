@@ -8,6 +8,8 @@ use warnings;
 use VMware::VILib;
 use VMware::VIRuntime;
 
+# autoflush STDOUT
+$| = 1;
 my %opts = (
         vm => {
         type => "=s",
@@ -64,7 +66,15 @@ if ($isvSphere55u2 eq "true") {
 } else {
 	print "http://" . $server . ":" . $htmlPort . "/console/?vmId=" . $vm_mo_ref_id . "&vmName=" . $vmname . "&host=" . $vcenter_fqdn . "&sessionTicket=" . $session . "&thumbprint=" . $vcenterSSLThumbprint . "\n";
 }
-print "Sleeping for 60 seconds and then exiting ...\n";
-sleep(60);
 
+$SIG{INT} = \&interrupt;
+
+sub interrupt {
+    print STDERR "Caught a control c!\n";
+    print "Disconnecting...\n";
+    Util::disconnect();
+    exit;  # or just about anything else you'd want to do
+}
+print "CTRL+C or Sleeping for 600 seconds and then exiting ...\n";
+sleep(600);
 Util::disconnect();
