@@ -30,6 +30,10 @@
                   </span>
               </div>
           <div class="main-section">
+              <div ng-hide="selectedProject">
+                  <h1>Check out our existing EMC projects</h1>
+                  <p>Select a project to begin</p>
+              </div>
               <div ng-show="selectedProject">
                   <iframe width="100%" height="650px" ng-src="{{detailFrameSrc}}"></iframe>
                   <div class="col-lg-offset-2 col-lg-8">
