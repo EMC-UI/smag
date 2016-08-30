@@ -7,19 +7,36 @@
     }]);
 
 
-    app.controller("ProjectListCtrl", ["$scope", "$location", '$http',
-        function ($scope, $location, $http) {
+    app.controller("ProjectListCtrl", ["$scope", "$location", '$http', '$sce',
+        function ($scope, $location, $http, $sce) {
             $http.get('/api/projects').
                 success(function(projects) {
                     $scope.projects = projects;
                 });
 
             $scope.select = function (project) {
-                // TODO:: Generate the URL and update the scope
-                //$scope.detailFrameSrc = '';
                 // Set the project to display
                 // TODO:: Need animation
                 $scope.selectedProject = project;
+                // update the iframe with the url
+                $http.get('/api/projects/' + project.id + '/vmrc').
+                  then(
+                    // success
+                    function(body) {
+                      if (!body.data.url) {
+                        alert('Invalid json: ' + body);
+                        $scope.detailFrameSrc = '';
+                      }
+                      else {
+                        console.log('Loading iframe ' + body.data.url);
+                        $scope.detailFrameSrc = $sce.trustAsResourceUrl(body.data.url);
+                      }
+                    },
+                    // failure
+                    function(error) {
+                      alert('URL fetch failed: ' + (error.statusText || ('status=' + error.status)));
+                    }
+                  );
             };
 
             $scope.cancel = function(project) {

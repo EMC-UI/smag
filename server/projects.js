@@ -23,5 +23,10 @@ module.exports = {
         return _.find(projects, function (p) {
             return p.id === id;
         });
+    },
+    getVmrc: function(id) {
+      return { 
+        url: 'http://www.emc.com'
+      }
     }
 };

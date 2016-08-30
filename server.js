@@ -23,6 +23,10 @@ module.exports = (function() {
             res.send(projects.getAll());
         });
 
+        app.get('/api/projects/:id/vmrc', function (req, res) {
+            res.send(projects.getVmrc(req.params.id));
+        });
+
         app.get('/api/projects/:id', function (req, res) {
             res.send(projects.get(req.params.id));
         });
