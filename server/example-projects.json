@@ -15,9 +15,6 @@
         "id": 2,
         "name": "MSM",
         "description": "Multi System Management",
-        "vm-name": "Selenium VM",
-        "vm-vcenter": "vcenter.dev.com",
-        "vm-vcenter-user": "",
-        "vm-vcenter-pass": ""
+        "vm-fake-url": "https://dpadsw.lss.emc.com/download/attachments/11879487/MSM_HighLevelSystem.png?version=2&modificationDate=1460406539000&api=v2"
     }
 ]

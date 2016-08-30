@@ -7,16 +7,21 @@
           {
               "id": 1,
               "name": "McQueen",
+              "description": "vRealize Data Protection",
               "vm-name": "IAAS (71a5a82e-c2e9-4cdf-8daf-5ea40f8e3cd7)",
-              "vm-vcenter": "vcenter-dev2.devlsvl.com",
-              "vm-vcenter-user": "...",
-              "vm-vcenter-pass": "..."
-          },
-          {
+              "vm-vcenter": "10.7.102.20",
+              "vm-vcenter-user": "",
+              "vm-vcenter-pass": "",
+              "ssh-host": "10.7.102.59",
+              "ssh-user": "",
+              "ssh-pass": ""
+           },
+           {
               "id": 2,
               "name": "MSM",
-              ...
-          }
+              "description": "Multi System Management",
+              "vm-fake-url": "https://dpadsw.lss.emc.com/download/attachments/11879487/MSM_HighLevelSystem.png?version=2&modificationDate=1460406539000&api=v2"
+           }
       ]
 - npm install
 - bower install
